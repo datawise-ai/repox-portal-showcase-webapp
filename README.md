@@ -1,24 +1,94 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Repox Portal Webapp
 
-## Getting Started
+This is a [Next.js](https://nextjs.org) project for the Repox Portal web application.
 
-First, run the development server:
+## Prerequisites
+
+1. Node.js 18+
+2. npm, yarn, pnpm, or bun package manager
+3. Bun
+
+## Installation
+
+1. Clone the repository:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
+git clone <repository-url>
+cd repox-portal-webapp
+```
+
+2. Install dependencies:
+
+```bash
+bun install
+```
+
+## Environment Variables
+
+**⚠️ IMPORTANT: You must create a `.env` file before running the application.**
+
+Create a `.env` file in the root directory with the following required environment variables:
+
+```env
+# API Configuration
+API_KEY=your_api_key_here
+NEXT_PUBLIC_API_URL=https://api.example.com
+NEXT_PUBLIC_TENANT_KEY=your_tenant_key_here
+```
+
+### Environment Variables Explained
+
+- `API_KEY`: Server-side API key for authenticating requests to the backend API
+- `NEXT_PUBLIC_API_URL`: Base URL of the API endpoint (must be prefixed with `NEXT_PUBLIC_` to be accessible in the browser)
+- `NEXT_PUBLIC_TENANT_KEY`: Tenant identifier key for multi-tenant support (must be prefixed with `NEXT_PUBLIC_` to be accessible in the browser)
+
+You can copy the `.env.example` file as a template:
+
+```bash
+cp .env.example .env
+```
+
+Then edit `.env` and fill in your actual values.
+
+## Development
+
+Run the development server:
+
+```bash
 bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The page auto-updates as you edit files. You can start editing the page by modifying `app/page.tsx`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Build
+
+Build the application for production:
+
+```bash
+bun run build
+```
+
+This creates an optimized production build in the `.next` folder.
+
+## Run Production Build
+
+After building, start the production server:
+
+```bash
+bun run start
+```
+
+The production server will run on [http://localhost:3000](http://localhost:3000) by default.
+
+## Linting
+
+Run the linter to check for code issues:
+
+```bash
+bun run lint
+```
 
 ## Learn More
 
