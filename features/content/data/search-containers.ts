@@ -27,7 +27,7 @@ export const searchContainers = async ({
     },
   };
 
-  const data = await apiClient("/v3/public/search", {
+  const data = await apiClient("/v3/public/containers/search", {
     method: "POST",
     body: JSON.stringify(payload),
   });

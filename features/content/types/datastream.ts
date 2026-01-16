@@ -2,14 +2,14 @@ import { ICollectionType } from "@/features/content/types/collection-type";
 import { ICoverFile } from "@/features/content/types/cover-file";
 import { IEntityProperty } from "@/features/content/types/property";
 
-export interface IContainer {
+export interface IDatastream {
+  tenant: string;
   uuid: string;
   label: string;
   type: ICollectionType;
   parent: IParent;
-  publishedAt: Date;
-  coverFile: null | ICoverFile;
-  ancestorPath: IParent[];
+  publishedAt: string;
+  coverFile: ICoverFile;
   tags: string[];
   properties: IEntityProperty[];
 }

@@ -13,3 +13,10 @@ export interface ISchemaGroup {
   uuid: string;
   name: string;
 }
+
+export interface IEntityProperty {
+  uuid: string;
+  property: IProperty;
+  schemaProperty: ISchemaProperty;
+  valueAsText: string;
+}

@@ -4,5 +4,5 @@ import { apiClient } from "@/lib/api-client";
 export const getContainerById = async (
   containerId: string
 ): Promise<IContainer> => {
-  return await apiClient(`/v3/public/${containerId}`);
+  return await apiClient(`/v3/public/containers/${containerId}`);
 };

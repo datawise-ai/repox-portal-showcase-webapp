@@ -14,7 +14,9 @@ interface ContainerDetailsProps {
 export async function ContainerDetails({ slug }: ContainerDetailsProps) {
   try {
     const container = await getContainerById(slug);
-    const coverImageUrl = getCoverImageUrl(container.coverFile, container.uuid);
+    const coverImageUrl = container.coverFile
+      ? getCoverImageUrl(container.coverFile.viewUrl, container.uuid)
+      : null;
 
     return (
       <div>

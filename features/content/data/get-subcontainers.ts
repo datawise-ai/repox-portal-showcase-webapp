@@ -13,7 +13,7 @@ export const getSubcontainers = async ({
   queryParams.set("page", page);
   queryParams.set("pageSize", "10");
 
-  return await apiClient(`/v3/public/${containerId}/children`, {
+  return await apiClient(`/v3/public/containers/${containerId}/children`, {
     queryParams,
   });
 };
