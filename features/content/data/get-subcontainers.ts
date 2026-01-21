@@ -10,8 +10,7 @@ export const getSubcontainers = async ({
   page: string;
 }): Promise<IPageableResponse<IContainer>> => {
   const queryParams = new URLSearchParams();
-  queryParams.set("page", page);
-  queryParams.set("pageSize", "10");
+  queryParams.set("page", page || "0");
 
   return await apiClient(`/v3/public/containers/${containerId}/children`, {
     queryParams,

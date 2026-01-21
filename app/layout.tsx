@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   title: "Repox — Explore content effortlessly",
   description:
     "A minimal, elegant web application for exploring hierarchical content structures",
+  icons: {
+    icon: "/favicon.png",
+  }
 };
 
 export default function RootLayout({

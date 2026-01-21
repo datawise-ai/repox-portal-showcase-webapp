@@ -19,7 +19,6 @@ export const searchContainers = async ({
     propertyValueFilters: [],
     tags: [],
     sort: [],
-    page: page,
     findInType: "LABELS",
     containerContent: {
       containerExists: "ANY",
@@ -27,10 +26,12 @@ export const searchContainers = async ({
     },
   };
 
-  const data = await apiClient("/v3/public/containers/search", {
+  const queryParams = new URLSearchParams();
+  queryParams.set("page", page);
+
+  return await apiClient("/v3/public/containers/search", {
     method: "POST",
     body: JSON.stringify(payload),
+    queryParams,
   });
-
-  return data;
 };

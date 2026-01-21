@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export function Header() {
   return (
-    <header className="bg-primary text-primary-foreground border-b border-primary/10">
+    <header className="sticky top-0 z-50 bg-primary text-primary-foreground border-b border-primary/10">
       <div className="container mx-auto px-6 py-5">
         <Link
           href="/"

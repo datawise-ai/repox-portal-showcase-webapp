@@ -42,15 +42,16 @@ export function SearchBar() {
 
   return (
     <form onSubmit={handleSearch} className="flex-1 mb-10">
-      <div className="flex items-center gap-6">
+      <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
         <label
           htmlFor="search-input"
           className="text-lg font-semibold tracking-tight whitespace-nowrap"
         >
           Keyword Search
         </label>
-        <div className="flex items-center gap-0 flex-1">
-          <div className="flex-1 relative">
+        <div className="flex w-full sm:flex-1 items-center">
+          {" "}
+          <div className="flex relative w-full">
             <Input
               id="search-input"
               type="text"
@@ -63,7 +64,7 @@ export function SearchBar() {
               <button
                 type="button"
                 onClick={handleClear}
-                className="absolute right-14 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors p-1"
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors p-1"
                 aria-label="Clear search"
               >
                 <IconX size={16} strokeWidth={2} />

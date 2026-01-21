@@ -9,7 +9,7 @@ export function ContainerMetadata({ container }: ContainerMetadataProps) {
   const description = container.properties.find(
     (prop) =>
       prop.property.slug === "description" ||
-      prop.property.name.toLowerCase().includes("description")
+      prop.property.name.toLowerCase().includes("description"),
   )?.valueAsText;
 
   return (
@@ -28,7 +28,10 @@ export function ContainerMetadata({ container }: ContainerMetadataProps) {
 
       {/* Properties */}
       {container.properties.length > 0 && (
-        <div className="space-y-5">
+        <div className="pt-6 border-t border-border">
+          <div className="text-md font-medium text-muted-foreground mb-3 uppercase tracking-wide">
+            Properties
+          </div>
           {container.properties
             .filter((prop) => {
               // Exclude description as it's shown separately
@@ -36,10 +39,7 @@ export function ContainerMetadata({ container }: ContainerMetadataProps) {
               return !name.includes("description");
             })
             .map((prop) => (
-              <div
-                key={prop.uuid}
-                className="border-b border-border pb-4 last:border-0"
-              >
+              <div key={prop.uuid} className="pb-4 last:border-0 last:pb-0">
                 <div className="text-xs font-medium text-muted-foreground mb-1.5 uppercase tracking-wide">
                   {prop.property.name}
                 </div>
@@ -52,7 +52,7 @@ export function ContainerMetadata({ container }: ContainerMetadataProps) {
       {/* Tags */}
       {container.tags.length > 0 && (
         <div className="pt-6 border-t border-border">
-          <div className="text-xs font-medium text-muted-foreground mb-3 uppercase tracking-wide">
+          <div className="text-md font-medium text-muted-foreground mb-3 uppercase tracking-wide">
             Tags
           </div>
           <div className="flex flex-wrap gap-2">
@@ -71,7 +71,7 @@ export function ContainerMetadata({ container }: ContainerMetadataProps) {
       {/* Type */}
       {container.type.name && (
         <div className="pt-6 border-t border-border">
-          <div className="text-xs font-medium text-muted-foreground mb-1.5 uppercase tracking-wide">
+          <div className="text-md font-medium text-muted-foreground mb-1.5 uppercase tracking-wide">
             Type
           </div>
           <div className="text-base font-normal">{container.type.name}</div>

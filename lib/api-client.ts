@@ -10,6 +10,7 @@ export const apiClient = async (
   headers.set("Authorization", `Bearer ${process.env.API_KEY}`);
   headers.set("X-TenantID", process.env.NEXT_PUBLIC_TENANT_KEY!);
   headers.set("Content-Type", "application/json");
+  headers.set("X-TargetID", "public");
 
   const queryString = options?.queryParams
     ? `?${options.queryParams.toString()}`
