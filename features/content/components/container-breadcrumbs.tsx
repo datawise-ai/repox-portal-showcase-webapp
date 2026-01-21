@@ -11,7 +11,7 @@ export function ContainerBreadcrumbs({ container }: ContainerBreadcrumbsProps) {
     ...(container.ancestorPath || []).map((ancestor) => ({
       label: ancestor.label,
       href: `/${ancestor.uuid}`,
-    })),
+    })).reverse(),
     { label: container.label, href: `/${container.uuid}` },
   ];
 

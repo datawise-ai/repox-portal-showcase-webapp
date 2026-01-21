@@ -9,8 +9,7 @@ interface DatastreamCardProps {
 }
 
 export function DatastreamCard({ datastream }: DatastreamCardProps) {
-  const viewUrl = datastream.coverFile?.viewUrl;
-  const coverImageUrl = datastream.coverFile?.viewUrl;
+  const viewUrl = datastream.bitstreamFile?.viewUrl;
 
   return (
     <Link
@@ -22,9 +21,9 @@ export function DatastreamCard({ datastream }: DatastreamCardProps) {
       <Card className="h-full overflow-hidden border-0 shadow-sm hover:shadow-md transition-all duration-300 bg-card py-0">
         {/* Cover Image */}
         <div className="relative w-full aspect-[4/3] bg-muted/30 overflow-hidden">
-          {coverImageUrl ? (
+          {viewUrl ? (
             <Image
-              src={coverImageUrl}
+              src={viewUrl}
               alt={datastream.label}
               fill
               className="object-cover group-hover:scale-[1.03] transition-transform duration-500 ease-out"

@@ -9,7 +9,8 @@ export interface IDatastream {
   type: ICollectionType;
   parent: IParent;
   publishedAt: string;
-  coverFile: ICoverFile;
+  bitstreamFile: ICoverFile;
+  ancestorPath: IParent[];
   tags: string[];
   properties: IEntityProperty[];
 }

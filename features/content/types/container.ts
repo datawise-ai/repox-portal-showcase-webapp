@@ -3,6 +3,7 @@ import { ICoverFile } from "@/features/content/types/cover-file";
 import { IEntityProperty } from "@/features/content/types/property";
 
 export interface IContainer {
+  tenant: string;
   uuid: string;
   label: string;
   type: ICollectionType;
