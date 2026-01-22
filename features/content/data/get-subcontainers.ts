@@ -11,6 +11,7 @@ export const getSubcontainers = async ({
 }): Promise<IPageableResponse<IContainer>> => {
   const queryParams = new URLSearchParams();
   queryParams.set("page", page || "0");
+  queryParams.set("size", "25");
 
   return await apiClient(`/v3/public/containers/${containerId}/children`, {
     queryParams,
