@@ -23,7 +23,7 @@ export function FolderCard({ container }: FolderCardProps) {
               src={coverImageUrl}
               alt={container.label}
               fill
-              className="object-cover group-hover:scale-[1.03] transition-transform duration-500 ease-out"
+              className="object-contain group-hover:scale-[1.03] transition-transform duration-500 ease-out"
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
             />
           ) : (
