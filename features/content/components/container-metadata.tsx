@@ -43,7 +43,7 @@ export function ContainerMetadata({ container }: ContainerMetadataProps) {
                 <div className="text-xs font-medium text-muted-foreground mb-1.5 uppercase tracking-wide">
                   {prop.property.name}
                 </div>
-                <div className="text-base font-normal">{prop.valueAsText}</div>
+                <div className="text-base font-normal">{prop.valueAsText || "-"}</div>
               </div>
             ))}
         </div>
