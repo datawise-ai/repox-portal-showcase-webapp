@@ -4,10 +4,10 @@ interface IApiClientOptions extends RequestInit {
 
 export const apiClient = async (
   endpoint: string,
-  options?: IApiClientOptions
+  options?: IApiClientOptions,
 ) => {
   const headers = new Headers();
-  headers.set("Authorization", `Bearer ${process.env.API_KEY}`);
+  headers.set("Authorization", process.env.API_KEY!);
   headers.set("X-TenantID", process.env.NEXT_PUBLIC_TENANT_KEY!);
   headers.set("Content-Type", "application/json");
   headers.set("X-TargetID", "public");
@@ -22,7 +22,7 @@ export const apiClient = async (
       {
         ...(options || {}),
         headers,
-      }
+      },
     );
     const data = await response.json();
     if (!response.ok) {
