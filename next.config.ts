@@ -1,5 +1,9 @@
 import type { NextConfig } from "next";
 
+const imageWithoutProtocol = process.env
+  .NEXT_PUBLIC_API_URL!.replace("https://", "")
+  .replace("http://", "");
+
 const nextConfig: NextConfig = {
   /* config options here */
   cacheComponents: true,
@@ -12,7 +16,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "repox-store-api-development.dev.datawise.ai",
+        hostname: imageWithoutProtocol,
       },
     ],
   },
