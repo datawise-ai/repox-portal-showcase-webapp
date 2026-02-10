@@ -58,10 +58,10 @@ export function ContainerMetadata({ container }: ContainerMetadataProps) {
           <div className="flex flex-wrap gap-2">
             {container.tags.map((tag) => (
               <span
-                key={tag}
+                key={tag.name}
                 className="text-xs px-3 py-1.5 bg-muted/50 rounded-full text-muted-foreground font-light"
               >
-                {tag}
+                {tag.name}
               </span>
             ))}
           </div>

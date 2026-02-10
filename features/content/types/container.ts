@@ -11,7 +11,9 @@ export interface IContainer {
   publishedAt: Date;
   coverFile: null | ICoverFile;
   ancestorPath: IParent[];
-  tags: string[];
+  tags: {
+    name: string;
+  }[];
   properties: IEntityProperty[];
 }
 
